@@ -209,9 +209,10 @@ jobs:
           execute_process(
             COMMAND "${{ matrix.config.environment_script }}" && set
             OUTPUT_FILE environment_script_output.txt
+            RESULT_VARIABLE res
           )
           file(STRINGS environment_script_output.txt output_lines)
-          message("da1 ${output_lines}")
+          message("da1 ${res} ${output_lines}")
           foreach(line IN LISTS output_lines)
             if (line MATCHES "^([a-zA-Z0-9_-]+)=(.*)$")
               set(ENV{${CMAKE_MATCH_1}} "${CMAKE_MATCH_2}")
