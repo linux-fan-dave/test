@@ -17,7 +17,7 @@ add_qtc_plugin(Untitled
   PLUGIN_DEPENDS
     QtCreator::Core
   DEPENDS
-    ${QtX}::Widgets
+    Qt5::Widgets
     QtCreator::ExtensionSystem
     QtCreator::Utils
   SOURCES
